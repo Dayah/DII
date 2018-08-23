@@ -1,0 +1,10 @@
+IMG, .NavigationLeft, .NavigationTop {
+	display: none;
+}
+.NavigationLeft {
+	display: none;
+}
+#LogoText {
+	margin-bottom: 1em;
+	font-size: x-large;
+}

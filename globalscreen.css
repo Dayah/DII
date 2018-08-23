@@ -1,0 +1,68 @@
+BODY {
+	background-color: white;
+}
+H1 {
+	font-size: large;
+	font-family: Verdana, Arial, sans-serif;
+	color: #334460;
+	margin-top: 14px;
+}
+H2, H3 {
+	font-size: medium;
+	font-family: Verdana, Arial, sans-serif;
+	color: #778890;
+	margin-bottom: 0;
+}
+UL, OL {
+	margin-top: 0;
+}
+#LogoText {
+	padding: 1em 0.5ex 0 0.5ex;
+	text-transform: lowercase;
+	color: gray;
+	font-family: Verdana, Arial, sans-serif;
+}
+#SupportHeader {
+	font-family: Arial, sans-serif;
+	line-height: 0.95;
+	margin: 14px 0 0.5ex 0;
+}
+.NavigationLeft, .NavigationTop {
+	color: white;
+	font-family: Verdana, Arial, sans-serif;
+	background-color: #556680;
+}
+.NavigationLeft DIV {
+	font-size: small;
+	margin: 1ex 5px 1ex 15px;
+}
+.NavigationLeft DIV DIV {
+	font-size: x-small;
+	text-indent: -5px;
+	margin: 0 0 0 15px;
+}
+.NavigationLeft DIV DIV DIV {
+	font-size: xx-small;
+	text-indent: -5px;
+	margin: 0 0 0 15px;
+}
+.NavigationLeft A, .NavigationTop A {
+	color: white;
+	text-decoration: none;
+}
+.NavigationLeft A:visited, .NavigationTop A:visited {
+	color: #DDDDDD;
+}
+.NavigationTop DIV {
+	padding: 0 1ex;
+}
+A:hover {
+	text-decoration: underline;
+}
+.Active {
+	text-decoration: underline;
+/*	background-color: white;
+	color: #556680;
+	border: thin solid #556680;
+*/
+}

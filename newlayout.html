@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>Integrating Your Site into the New DII Layout</title>
+  <style type="text/css">
+   <!--
+   H2 {
+   	margin-top: 1.5em;
+   	margin-bottom: 0.5em;
+   }
+   P {
+   	margin-top: 0;
+   	margin-left: 3ex;
+   }
+   UL, OL {
+   	margin-top: 0;
+   }
+   DIV P {
+   	margin-left: 2ex;
+   	margin-bottom: 0.2em;
+   }
+   -->
+  </style>
+ </head>
+ <body>
+<h1 align="center">Integrating Your Site into the New DII Layout</h1>
+
+<div style="border: thin solid black; padding: 1em 0; width: minimum;">
+<p>Migrating your site to the new layout:</p>
+<ol>
+ <li><a href="#info">Background Information</a></li>
+ <li><a href="#template">Pasting Your Pages Into the Template</a></li>
+ <li><a href="#title">Choosing a Title</a></li>
+ <li><a href="#meta">Making a Description and Choosing Keywords</a></li>
+ <li><a href="#navigation">Creating Navigational Menus</a></li>
+ <li><a href="#content">Strip Content of Layout Markup</a></li>
+ <li><a href="#together">Bringing It All Together</a></li>
+</ol>
+<p>Other considerations:</p>
+<ul>
+ <li><a href="#linking">Linking to Images (Bandwidth Stealing)</a></li>
+ <li><a href="#relative">Use Relative Links Internally</a></li>
+ <li><a href="#wysiwyg">The Dangers of WYSIWYG Editors</a></li>
+
+</ul>
+</div>
+
+<a name="info"><h2>Background Information</h2></a>
+<p>There are two components of the DII layout: a restructuring of information and a new design. This document deals primarily with the technical aspects of integrating your content into the new design.</p>
+<p>Though it is not absolutely necessary, a very basic understanding of HTML will greatly benefit you in building your site with this document as a guide.</p>
+
+<a name="template"><h2>Pasting Your Pages Into the Template</h2></a>
+<p>Let's start with the template. Ultimately, all of your content will pasted in place of the <strong>bold</strong> text below.</p>
+<pre>
+&lt;!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt;Division of Information Infrastructure - <strong>YOUR PAGE TITLE</strong>&lt;/title&gt;
+  &lt;link href="/globalprint.css" rel="stylesheet" type="text/css" media="print"&gt;
+  &lt;link href="/globalscreen.css" rel="stylesheet" type="text/css" media="screen"&gt;
+  &lt;meta name="description" content="<strong>TWENTY-FIVE WORD SENTENCE DESCRIPTION</strong>"&gt;
+  &lt;meta name="keywords" content="<strong>COMMA SEPARATED KEYWORDS LIST</strong>"&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" id="LogoTable"&gt;
+   &lt;tr&gt;
+    &lt;td valign="bottom"&gt;&lt;img src="/graphics/logo-top.gif" alt=""&gt;&lt;/td&gt;
+    &lt;td id="LogoText"&gt;Division&amp;nbsp;of&amp;nbsp;Information&amp;nbsp;Infrastructure&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan="2" background="/graphics/horizontal-stripe.gif"&gt;&lt;img src="/graphics/logo-bottom.gif" alt=""&gt;&lt;/td&gt;
+    &lt;td align="right" valign="top"&gt;&lt;img src="/graphics/bevel-logo-right.gif" alt="\"&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" id="NavigationTopTable" width="98%"&gt;
+   &lt;tr align="center"&gt;
+    &lt;td class="NavigationTop" width="140" background="/graphics/vertical-stripe.gif"&gt;&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%" align="left"&gt;&lt;div&gt;&lt;a href="/search.html"&gt;Search&amp;nbsp;DII&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%"&gt;&lt;div&gt;&lt;a href="http://ldapserver.utk.edu/"&gt;UTK&amp;nbsp;Phonebook&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%"&gt;&lt;div&gt;&lt;a href="/contact.html"&gt;Contact&amp;nbsp;Us&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%"&gt;&lt;div&gt;&lt;a href="/sitemap.html"&gt;Site&amp;nbsp;Map&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%" style="padding-right: 0;"&gt;&lt;div&gt;&lt;a href="/policies.html"&gt;Policies&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" align="right" valign="top"&gt;&lt;img src="/graphics/bevel-topmenu-right.gif" alt=""&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" id="ContentTable" width="93%"&gt;
+   &lt;tr&gt;
+    &lt;td class="NavigationLeft" colspan="3" width="140" background="/graphics/vertical-stripe.gif" valign="top"&gt;
+
+     <strong>YOUR NAVIGATION MENU</strong>
+
+    &lt;/td&gt;
+    &lt;td valign="top"&gt;&lt;img src="/graphics/bevel-between.gif" alt=""&gt;&lt;/td&gt;
+    &lt;td width="100%" valign="top"&gt;
+
+     <strong>YOUR PAGE CONTENT</strong>
+
+     &lt;hr color="black" noshade size="1"&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr class="NavigationLeft" valign="bottom"&gt;
+    &lt;td&gt;&lt;img src="/graphics/bevel-leftmenu-left.gif" alt="\"&gt;&lt;/td&gt;
+    &lt;td align="center"&gt;&lt;a href="http://www.utk.edu/"&gt;&lt;img src="/graphics/ut-logo.gif" alt="UT" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align="right"&gt;&lt;img src="/graphics/bevel-leftmenu-right.gif" alt="/"&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<a name="title"><h2>Choosing a Title</h2></a>
+<p>Notice that there are three places for you to add content: the page title (end of fourth line), the page content, and the navigational menus. Your page title should be short, descriptive, and hierarchical. For example, the main page of the Campus Cable TV site would use the following title:</p>
+<xmp><title>Division of Information Infrastructure - Campus Cable TV</title></xmp>
+<p>and the page on Cable's site that dealt with billing:</p>
+<xmp><title>Division of Information Infrastructure - Campus Cable TV - Billing</title></xmp>
+
+<a name="meta"><h2>Making a Description and Choosing Keywords</h2></a>
+<p>It's a good idea to make a description of your site and choose search keywords so that users of the search engine can find your pages. When people use the search engine and your site comes up as a result, the description is displayed below the address as a summary of the page. A good description should be about one sentence and less than twenty-five words. Avoid talking about the document itself; just tell what your site is offering. A description should be valid anywhere, not just for the web site. A bad description:</p>
+<xmp><meta name="description" content="This web site is about campus cable tv and the services we offer."></xmp>
+<p>Good description:</p>
+<xmp><meta name="description" content="Campus Cable TV offers full cable service to students in residence halls (dorms) for an affordable price."></xmp>
+<p>Keywords match against words typed in a search engine. Try to imagine what questions users would ask that your site answers. Then, dissect the questions for key terms. If your site answered the following questions:</p>
+<ul>
+ <li>How can I pay for cable online?</li>
+ <li>What channels are available in dorms?</li>
+ <li>How much is the cable service?</li>
+ <li>Where can I apply for cable online?</li>
+ <li>What other costs and fees are there for cable service?</li>
+ <li>What equipment do I need?</li>
+</ul>
+<p>A good keywords list could be:</p>
+<xmp><meta name="keywords" content="cable, tv, television, service, dorm, residence, hall, apply, online, pay, purchase, channel, cost, fee, equipment, billing"></xmp>
+<p>Some guidelines for making a keywords list:</p>
+<ul>
+ <li>Put most important words first.</li>
+ <li>Limit your word list to twenty-five items.</li>
+ <li>Do not repeat any keywords.</li>
+ <li>Make sure all keywords are lowercase.</li>
+ <li>Choose the simplest variation of the word: dorm instead of dorms, install instead of installation.</li>
+ <li>Do not include the standard words ignored by search engines: in, an, and, the, of, why, when, who, where, etc.</li>
+</ul>
+
+<a name="navigation"><h2>Creating Navigational Menus</h2></a>
+<p>Thanks to the global style sheet, creating navigational menus for your site is a simple, four- (or five-) step process. The style sheet will handle all font sizes, spacing, and indenting for you.</p>
+<ol class="NavMenu">
+ <li>Create a hierarchical structure (Always include "Home" as a top-level link at the bottom of your menu.):</li>
+<pre>
+Campus Cable TV
+   Billing
+      Online
+      In Person
+   Equipment
+   Policies
+   Services
+   Instructions
+   Channel Lineup
+Home
+</pre>
+ <li>Place link elements around each navigation item. Notice that changes made in this step are <strong>bold</strong>.</li>
+<pre>
+<strong>&lt;a href="."&gt;</strong>Campus Cable TV<strong>&lt;/a&gt;</strong>
+   <strong>&lt;a href="equipment.html"&gt;</strong>Equipment<strong>&lt;/a&gt;</strong>
+   <strong>&lt;a href="policies.html"&gt;</strong>Policies<strong>&lt;/a&gt;</strong>
+   <strong>&lt;a href="billing/"&gt;</strong>Billing<strong>&lt;/a&gt;</strong>
+      <strong>&lt;a href="billing/online.html"&gt;</strong>Online<strong>&lt;/a&gt;</strong>
+      <strong>&lt;a href="billing/walk-in.html"&gt;</strong>Walk-In<strong>&lt;/a&gt;</strong>
+   <strong>&lt;a href="services.html"&gt;</strong>Services<strong>&lt;/a&gt;</strong>
+   <strong>&lt;a href="instructions.html"&gt;</strong>Instructions<strong>&lt;/a&gt;</strong>
+   <strong>&lt;a href="channels.html"&gt;</strong>Channel Lineup<strong>&lt;/a&gt;</strong>
+<strong>&lt;a href="/"&gt;</strong>Home<strong>&lt;/a&gt;</strong>
+</pre>
+ <li>Wrap each menu item with <strong>&lt;div&gt;</strong>. When wrapping items, include all submenus. First, we will wrap Campus Cable TV. Since it has submenus, the &lt;div&gt; must encompasses everything. Home is also a top-level menu and must be wrapped as well.</li>
+<pre>
+<strong>&lt;div&gt;</strong>
+ &lt;a href="."&gt;Campus Cable TV&lt;/a&gt;
+    &lt;a href="equipment.html"&gt;Equipment&lt;/a&gt;
+    &lt;a href="policies.html"&gt;Policies&lt;/a&gt;
+    &lt;a href="billing/"&gt;Billing&lt;/a&gt;
+       &lt;a href="billing/online.html"&gt;Online&lt;/a&gt;
+       &lt;a href="billing/walk-in.html"&gt;Walk-In&lt;/a&gt;
+    &lt;a href="services.html"&gt;Services&lt;/a&gt;
+    &lt;a href="instructions.html"&gt;Instructions&lt;/a&gt;
+    &lt;a href="channels.html"&gt;Channel Lineup&lt;/a&gt;
+<strong>&lt;/div&gt;</strong>
+<strong>&lt;div&gt;</strong>&lt;a href="/"&gt;Home&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+</pre>
+ <li>Next, wrap submenus with &lt;div&gt;. Again, since Billing has submenus, Billing's &lt;div&gt; should contain its two submenus.</li>
+<pre>
+&lt;div&gt;
+ &lt;a href="."&gt;Campus Cable TV&lt;/a&gt;
+    <strong>&lt;div&gt;</strong>&lt;a href="equipment.html"&gt;Equipment&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+    <strong>&lt;div&gt;</strong>&lt;a href="policies.html"&gt;Policies&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+    <strong>&lt;div&gt;</strong>
+     &lt;a href="billing/"&gt;Billing&lt;/a&gt;
+        &lt;a href="billing/online.html"&gt;Online&lt;/a&gt;
+        &lt;a href="billing/walk-in.html"&gt;Walk-In&lt;/a&gt;
+    <strong>&lt;/div&gt;</strong>
+    <strong>&lt;div&gt;</strong>&lt;a href="services.html"&gt;Services&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+    <strong>&lt;div&gt;</strong>&lt;a href="instructions.html"&gt;Instructions&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+    <strong>&lt;div&gt;</strong>&lt;a href="channels.html"&gt;Channel Lineup&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+&lt;/div&gt;
+&lt;div&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/div&gt;
+</pre>
+ <li>We are left with two sub submenus that are not yet wrapped. Wrap them. (If your menus only span two levels, the last step is unnecessary.) Also notice that to visually cue the user of the current page, <strong>class="Active"</strong> is added to the &lt;div&gt; of the current page. It is good practice to remove the link that corresponds to the current page as well.</li>
+<pre>
+&lt;div&gt;
+ &lt;a href="."&gt;Campus Cable TV&lt;/a&gt;
+    &lt;div&gt;&lt;a href="equipment.html"&gt;Equipment&lt;/a&gt;&lt;/div&gt;
+    &lt;div <strong>class="Active"</strong>&gt;Policies&lt;/div&gt;
+    &lt;div&gt;
+     &lt;a href="billing/"&gt;Billing&lt;/a&gt;
+        <strong>&lt;div&gt;</strong>&lt;a href="billing/online.html"&gt;Online&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+        <strong>&lt;div&gt;</strong>&lt;a href="billing/walk-in.html"&gt;Walk-In&lt;/a&gt;<strong>&lt;/div&gt;</strong>
+    &lt;/div&gt;
+    &lt;div&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="instructions.html"&gt;Instructions&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="channels.html"&gt;Channel Lineup&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/div&gt;
+</pre>
+</ol>
+<p>Your hierarchical navigation menu is complete. Paste it into the appropriate place on the <a href="#template">template</a>.</p>
+
+<a name="content"><h2>Strip Content of Layout Markup</h2></a>
+<p>The most important thing to remember when preparing to migrate your content to the new layout is that you only want the content, none of the layout. This means that a document should not contain any <strong>&lt;font&gt;</strong> or even <strong>&lt;br&gt;</strong>. Only the most basic knowledge of HTML is required to use these templates. Use <strong>&lt;h<em>x</em>&gt;</strong> for headings, <strong>&lt;p&gt;</strong> for paragraphs, and <strong>&lt;ul&gt;</strong> or <strong>&lt;ol&gt;</strong> for lists. Below is an example of a page utilizing all of the mentioned components.
+<xmp>
+<h1>Campus Cable TV</h1>
+<p>DII offers on-campus students full cable TV service at an affordable price.</p>
+<h2>What You'll Find In This Section</h2>
+<ul>
+ <li><a href="billing.html">Billing</a> (Costs, fees, and where to pay, <a href="/ecommerce/">purchase online</a>)</li>
+ <li><a href="equipment.html">Equipment</a> (Required hardware)</li>
+ <li><a href="policies.html">Policies</a> (Subscription terms)</li>
+ <li><a href="services.html">Services</a> (<a href="semessrv.pdf">Apply for service [PDF]</a>, report problems)</li>
+ <li><a href="instructions.html">Instructions</a> (How to get connected)</li>
+ <li><a href="lineup.html">Channel Lineup</a> (List of available channels)</li>
+</ul>
+<h2>Services Offered</h2>
+<ul>
+ <li>More than 30 channels, including ESPN, MTV, BET, History, and many more. (Lineup subject to change without notice.)</li>
+ <li>VTV-33 Movies, showing new releases and movie classics</li>
+ <li>Pay by semester; ends monthly billing hassle</li>
+ <li>Don't forget to bring your own cable-ready TV, VCR, etc.</li>
+ <li>Semester cost is $77.50</li>
+ <li>No additional installation charge</li>
+</ul>
+</xmp>
+<p>Notice that all optional closing tags are included (<strong>&lt;/p&gt;</strong>, <strong>&lt;/li&gt;</strong>). This is for compatibility with the style sheet used to add layout to your site.</p>
+
+<a name="together"><h2>Bringing It All Together</h2></a>
+<p>Now that all components of the page are complete, they can be brought together in the original <a href="#template">template</a>. Custom content added during the creation of your page is <strong>bold</strong>.</p>
+<pre>
+&lt;!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt;Division of Information Infrastructure - <strong>Campus Cable TV</strong>&lt;/title&gt;
+  &lt;link href="/globalprint.css" rel="stylesheet" type="text/css" media="print"&gt;
+  &lt;link href="/globalscreen.css" rel="stylesheet" type="text/css" media="screen"&gt;
+  &lt;meta name="description" content="<strong>Campus Cable TV offers full cable service to students in residence halls (dorms) for an affordable price.</strong>"&gt;
+  &lt;meta name="keywords" content="<strong>cable, tv, television, service, dorm, residence, hall, apply, online, pay, purchase, channel, cost, fee, equipment, billing</strong>"&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" id="LogoTable"&gt;
+   &lt;tr&gt;
+    &lt;td valign="bottom"&gt;&lt;img src="/graphics/logo-top.gif" alt=""&gt;&lt;/td&gt;
+    &lt;td id="LogoText"&gt;Division&amp;nbsp;of&amp;nbsp;Information&amp;nbsp;Infrastructure&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td colspan="2" background="/graphics/horizontal-stripe.gif"&gt;&lt;img src="/graphics/logo-bottom.gif" alt=""&gt;&lt;/td&gt;
+    &lt;td align="right" valign="top"&gt;&lt;img src="/graphics/bevel-logo-right.gif" alt="\"&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" id="NavigationTopTable" width="98%"&gt;
+   &lt;tr align="center"&gt;
+    &lt;td class="NavigationTop" width="140" background="/graphics/vertical-stripe.gif"&gt;&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%" align="left"&gt;&lt;div&gt;&lt;a href="/search.html"&gt;Search&amp;nbsp;DII&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%"&gt;&lt;div&gt;&lt;a href="http://ldapserver.utk.edu/"&gt;UTK&amp;nbsp;Phonebook&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%"&gt;&lt;div&gt;&lt;a href="/contact.html"&gt;Contact&amp;nbsp;Us&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%"&gt;&lt;div&gt;&lt;a href="/sitemap.html"&gt;Site&amp;nbsp;Map&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" width="15%" style="padding-right: 0;"&gt;&lt;div&gt;&lt;a href="/policies.html"&gt;Policies&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="NavigationTop" align="right" valign="top"&gt;&lt;img src="/graphics/bevel-topmenu-right.gif" alt=""&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" id="ContentTable" width="93%"&gt;
+   &lt;tr&gt;
+    &lt;td class="NavigationLeft" colspan="3" width="140" background="/graphics/vertical-stripe.gif" valign="top"&gt;
+
+     <strong>&lt;div&gt;
+      &lt;a href="."&gt;Campus Cable TV&lt;/a&gt;
+         &lt;div&gt;&lt;a href="equipment.html"&gt;Equipment&lt;/a&gt;&lt;/div&gt;
+         &lt;div&gt;&lt;a href="policies.html"&gt;Policies&lt;/a&gt;&lt;/div&gt;
+         &lt;div&gt;
+          &lt;a href="billing/"&gt;Billing&lt;/a&gt;
+             &lt;div&gt;&lt;a href="billing/online.html"&gt;Online&lt;/a&gt;&lt;/div&gt;
+             &lt;div&gt;&lt;a href="billing/walk-in.html"&gt;Walk-In&lt;/a&gt;&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/div&gt;
+         &lt;div&gt;&lt;a href="instructions.html"&gt;Instructions&lt;/a&gt;&lt;/div&gt;
+         &lt;div&gt;&lt;a href="channels.html"&gt;Channel Lineup&lt;/a&gt;&lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/div&gt;</strong>
+
+    &lt;/td&gt;
+    &lt;td valign="top"&gt;&lt;img src="/graphics/bevel-between.gif" alt=""&gt;&lt;/td&gt;
+    &lt;td width="100%" valign="top"&gt;
+
+     <strong>&lt;h1&gt;Campus Cable TV&lt;/h1&gt;
+     &lt;p&gt;DII offers on-campus students full cable TV service at an affordable price.&lt;/p&gt;
+     &lt;h2&gt;What You'll Find In This Section&lt;/h2&gt;
+     &lt;ul&gt;
+      &lt;li&gt;&lt;a href="billing.html"&gt;Billing&lt;/a&gt; (Costs, fees, and where to pay, &lt;a href="/ecommerce/"&gt;purchase online&lt;/a&gt;)&lt;/li&gt;
+      &lt;li&gt;&lt;a href="equipment.html"&gt;Equipment&lt;/a&gt; (Required hardware)&lt;/li&gt;
+      &lt;li&gt;&lt;a href="policies.html"&gt;Policies&lt;/a&gt; (Subscription terms)&lt;/li&gt;
+      &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt; (&lt;a href="semessrv.pdf"&gt;Apply for service [PDF]&lt;/a&gt;, report problems)&lt;/li&gt;
+      &lt;li&gt;&lt;a href="instructions.html"&gt;Instructions&lt;/a&gt; (How to get connected)&lt;/li&gt;
+      &lt;li&gt;&lt;a href="lineup.html"&gt;Channel Lineup&lt;/a&gt; (List of available channels)&lt;/li&gt;
+     &lt;/ul&gt;
+     &lt;h2&gt;Services Offered&lt;/h2&gt;
+     &lt;ul&gt;
+      &lt;li&gt;More than 30 channels, including ESPN, MTV, BET, History, and many more. (Lineup subject to change without notice.)&lt;/li&gt;
+      &lt;li&gt;VTV-33 Movies, showing new releases and movie classics&lt;/li&gt;
+      &lt;li&gt;Pay by semester; ends monthly billing hassle&lt;/li&gt;
+      &lt;li&gt;Don't forget to bring your own cable-ready TV, VCR, etc.&lt;/li&gt;
+      &lt;li&gt;Semester cost is $77.50&lt;/li&gt;
+      &lt;li&gt;No additional installation charge&lt;/li&gt;
+     &lt;/ul&gt;</strong>
+
+     &lt;hr color="black" noshade size="1"&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr class="NavigationLeft" valign="bottom"&gt;
+    &lt;td&gt;&lt;img src="/graphics/bevel-leftmenu-left.gif" alt="\"&gt;&lt;/td&gt;
+    &lt;td align="center"&gt;&lt;a href="http://www.utk.edu/"&gt;&lt;img src="/graphics/ut-logo.gif" alt="UT" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td align="right"&gt;&lt;img src="/graphics/bevel-leftmenu-right.gif" alt="/"&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Your site is now complete. <a href="cable.html">View the page we just created</a>.</p>
+<hr>
+
+<a name="linking"><h2>Linking to Images (Bandwidth Stealing)</h2></a>
+<p>Though it is widely recognized as good practice to save images to one's local server when using them, this is counterproductive for our use. Bandwidth stealing is not an issue, since the total drain on UT's resources is unchanged, and sometimes worse&#151;regardless of who serves the images. For example, let's say the First Responders site (not a subdirectory of DII like Cable, but a separate web site: www.frp.utk.edu) decided to copy the images for the corners and the style sheets to their local server. This would create several problems. First, if DII decided to change the color of their design, all pages that linked to our images and style sheets would automatically update. First Responders would not. Second, if problems were discovered with the design, they could be corrected globally. Linking to our images and style sheets ensures that the layout of your page will be current and consistent with DII's layout. Third, using the same images on the same server actually conserves bandwidth. If someone visits DII and loads our style sheets and images and then visits First Responders, loading may only take half the time as the user's browser has already cached DII's global documents.</p>
+
+<a name="relative"><h2>Use Relative Links Internally</h2></a>
+<p>For maintenance purposes, use relative links within your site. Relative links point to another document in relation to the current, rather than saying exactly where it is. For example, http://dii.utk.edu/cable/billing.html is an absolute link. It tells exactly where the document is. Instead, if the current document is already in the /cable directory, just point to billing.html. If you would like to point to http://dii.utk.edu/cable/ from billing.html, make a link to "." A single dot means go to the default document of the current directory. To link to the parent directory, use two dots (..). Linking to ".." while in http://dii.utk.edu/cable/instructions/analog.html will take you to http://dii.utk.edu/cable/.</p>
+<p>Relative links make your site incredibly easy to maintain. If the name of the server changes from dii.utk.edu to its.utk.edu, all links will still work if they are relative. Conversely, every single absolute link will be broken. Using "." and ".." will even allow your site, should it become necessary, to be moved to a shallower or deeper subdirectory and not require any changes.</p>
+
+<a name="wysiwyg"><h2>The Dangers of WYSIWYG Editors</h2></a>
+<p>It is important that you do not run the above templates through a WYSIWYG editor such as FrontPage. WYSIWYG editors are infamous for damaging and reflowing HTML. If available, use a plain text editor such as notepad, wordpad, vi, SimpleText, or text-based HTML editor like HomeSite or EditPad. Since the process to create your site is so simple, a WYSIWYG editor can only complicate things.</p>
+<p>From time to time, the DII web team may need to make global changes to all pages on the site. WYSIWYG editors could reflow documents to the point that we cannot search for strings on your page to do a global find/replace.</p>
+
+<hr>
+<div align="right"><address>Michael Dayah<br><a href="mailto:michael@dayah.com">michael@dayah.com</a><br>SMC 254 | 4-3592</address></div>
+ </body>
+</html>
